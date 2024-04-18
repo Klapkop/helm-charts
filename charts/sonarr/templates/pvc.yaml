@@ -8,8 +8,6 @@ metadata:
   annotations:
   {{- if .Values.persistence.storageClass }}
     volume.beta.kubernetes.io/storage-class: {{ .Values.persistence.storageClass | quote }}
-  {{- else }}
-    volume.beta.kubernetes.io/storage-class: default
   {{- end }}
 spec:
   accessModes:

@@ -9,6 +9,9 @@ image:
   pullPolicy: IfNotPresent
   tag: latest
 
+deployment:
+  strategy: Recreate
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -87,9 +90,9 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 persistence:
+  enabled: true
   storageClass: ""
   existingClaim: ""
-  enabled: true
   accessMode: ReadWriteOnce
   size: 1Gi
 
